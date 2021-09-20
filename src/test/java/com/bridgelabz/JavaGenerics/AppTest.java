@@ -20,11 +20,22 @@ public class AppTest
     
 	@Test
     public void maximumFloatValue() {
-    	float test1 = genericCase.toPrint(2.45f, 3.05f, 2.5f);
-    	float test2 = genericCase.toPrint(3.05f, 2.5f, 2.45f);
+		float test1 = genericCase.toPrint(3.05f, 2.5f, 2.45f);
+    	float test2 = genericCase.toPrint(2.45f, 3.05f, 2.5f);
     	float test3 = genericCase.toPrint(2.45f, 2.5f, 3.05f);
     	assertEquals(3.05f, test1, DELTA);
     	assertEquals(3.05f, test2, DELTA);
     	assertEquals(3.05f, test3, DELTA);
     }
+	
+	@Test
+	public void maximumString() {
+		String test1 = genericCase.toPrint("Banana","Apple", "Peach");
+		String test2 = genericCase.toPrint("Apple","Banana", "Peach");
+		String test3 = genericCase.toPrint("Apple", "Peach", "Banana");
+		assertEquals("Banana",test1);
+		assertEquals("Banana",test2);
+		assertEquals("Banana",test3);
+		
+	}
 }
