@@ -2,9 +2,8 @@ package com.bridgelabz.JavaGenerics;
 
 public class GenericCase{
 	
-	public Integer toPrint(Integer x, Integer y , Integer z) {
-		
-		Integer max = x;
+	public <G extends Comparable<G>> G maximum(G x, G y, G z) {
+		G max = x;
 		if( y.compareTo(max) > 0)
 			max = y;
 		if (z.compareTo(max) > 0)
@@ -12,23 +11,17 @@ public class GenericCase{
 		return max;
 	}
 	
-	public Float toPrint(Float x, Float y , Float z) {
-			
-			Float max = x;
-			if( y.compareTo(max) > 0)
-				max = y;
-			if (z.compareTo(max) > 0)
-				max = z;
-			return max;
-		}
-	
-	public String toPrint(String x, String y , String z) {
-		
+	public static String testMaximum(String x, String y, String z) {
 		String max = x;
-		if( y.compareTo(max) > 0)
+		if( y.compareTo(max) > 0 ) {
 			max = y;
-		if (z.compareTo(max) > 0)
+			System.out.println(max);
+		}
+		if ( z.compareTo(max) > 0 ) {
 			max = z;
+			System.out.println(max);
+		}
 		return max;
 	}
+	
 }
